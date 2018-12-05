@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="assets/lib/anime.min.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <!-- CSS -->
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <title>Beach Out!</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1 class="display-4">Beach Out!</h1>
+      <p class="lead">Let's get away, our destination awaits!</p>
+      <hr class="my-4">
+      <div class="container">
+        <div class="row">
+          <p>Start by adding dates and clicking the button below..</p>
+        </div>
+        <div class="row">
+
+          <div class="col-sm-6 mt-4">
+            <form>
+              <!-- <div class='col-sm-6'> -->
+              <div class="form-group">
+
+                <!-- <p><small>When You'd like to leave..</small></p> -->
+                <label>When You'd like to leave..</label>
+                <input id="departure-date" type='date' class="form-control" />
+                <!-- </div> -->
+              </div>
+              <!-- </div> -->
+              <!-- </div> -->
+              <!-- </div> -->
+              <!-- <div class="container"> -->
+              <!-- <div class="row"> -->
+              <!-- <div class='col-sm-6'> -->
+              <div class="form-group">
+                <!-- <p><small>When You'd like to come back..</small></p> -->
+                <label>When You'd like to come back..</label>
+
+                <input id="returnDate" type='date' class="form-control" />
+                <!-- </div> -->
+              </div>
+              <!-- </div> -->
+              <!-- </div> -->
+              <!-- </div> -->
+              <!-- <div class="container"> -->
+              <!-- <div class="row"> -->
+              <!-- <div class='col-sm-6'> -->
+              <div class="form-group">
+                <input id="user-airport" type='text' placeholder="Your city's Airport Code.." class="form-control" />
+              </div>
+              <!-- </div> -->
+              <!-- </div> -->
+              <!-- </div> -->
+              <!-- Email Address Input Field -->
+              <!-- <div class="container"> -->
+              <!-- <div class="row"> -->
+              <!-- <div class='col-sm-6'> -->
+              <div class="form-group">
+                <input id="email-add" type='text' placeholder="Email Address Confirmation" class="form-control">
+              </div>
+              <!-- </div> -->
+              <!-- </div> -->
+              <!-- </div> -->
+              <!-- Email Address Input Field -->
+            </form>
+          </div>
+          <div class="col-sm-6">
+            <a id="vacation-button" class="btn btn-primary btn-lg" href="#" role="button"><i class="fa fa-plane"
+                aria-hidden="true"></i>Vacation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- </div> -->
+    <!-- Modal -->
+    <div class="backdrop"></div>
+    <div class="modal">
+      <h1>Beach Destination!</h1>
+      <span class="close">&times;</span>
+      <div class="modal-content"></div>
+    </div>
+    <!-- End Modal -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+
+        <h1 class="tableHeader"><i class="fas fa-utensils"></i> Restaurant</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Restaurant Name:</th>
+              <th scope="col">Price For Two:</th>
+              <th scope="col">Restaurant Address:</th>
+              <th scope="col">Cuisines:</th>
+            </tr>
+          </thead>
+          <tbody id="restaurants">
+            <tr>
+              <td class="ResName"></td>
+              <td class="ResforTwo"></td>
+              <td class="ResAddress"></td>
+              <td class="Cuisines"></td>
+            </tr>
+          </tbody>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Hotel Name:</th>
+                <th scope="col">Hotel Price:</th>
+                <th scope="col">Hotel Address:</th>
+                <th scope="col">Room Type:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="HoName"></td>
+                <td class="HoPrice"></td>
+                <td class="HoAddress"></td>
+                <td class="HoRoomType"></td>
+              </tr>
+            </tbody>
+            <h2 class="tableHeader"><i class="fas fa-hotel"></i> Hotel</h1>
+
+
+
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Airline:</th>
+                    <th scope="col">Price(USD):</th>
+                    <th scope="col">Departure Date/Time:</th>
+                    <th scope="col">Arrival Date/Time:</th>
+                    <th scope="col">Destination Airport:</th>
+                    <th scope="col">Duration of flight:</th>
+                  </tr>
+                </thead>
+                <tbody class="flight-data">
+                  <tr>
+                    <th colspan="6">Departing Flight</th>
+                  </tr>
+                  <tr>
+                    <td class="Airline"></td>
+                    <td class="FlightPrice"></td>
+                    <td class="LeaveDate"></td>
+                    <td class="FlightArrival"></td>
+                    <td class="ArrivalAirport"></td>
+                    <td class="Duration"></td>
+                  </tr>
+                  <tr>
+                    <th colspan="6">Returning Flight</th>
+                  </tr>
+                  <tr>
+                    <td class="retAirline"></td>
+                    <td class="retFlightPrice"></td>
+                    <td class="retLeaveDate"></td>
+                    <td class="retFlightArrival"></td>
+                    <td class="retArrivalAirport"></td>
+                    <td class="retDuration"></td>
+                  </tr>
+
+                </tbody>
+                <h1 class="tableHeader"><i class="fas fa-plane-departure"></i> Flights</h1>
+
+      </div>
+    </div>
+  </div>
+  <script src="assets/javascript/main.js"></script>
+</body>
+
+</html>

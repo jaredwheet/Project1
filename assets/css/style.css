@@ -1,0 +1,133 @@
+@import url("reset.css");
+
+body {
+    height: 100%;
+    background-image: url(https://cache.desktopnexus.com/cropped-wallpapers/1992/1992196-1882x1058-[DesktopNexus.com].jpg?st=sWqlNLdPQaV6O0hGlv6o0g&e=1542306100);
+    font-family: Arial, Helvetica, sans-serif;
+    
+  }
+
+  .email-good {
+    border:5px solid green;
+    }
+
+   .email-bad {
+    border:5px solid red;
+  }
+
+  .form {
+    background-color: rgb(221, 252, 253);
+  }
+
+  .jumbotron {
+    background-color: rgb(221, 252, 253);    
+    font-weight: bold;
+    color: black;
+    padding: 50px;
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+    
+
+  }
+  .backdrop {
+    display: none;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;  
+  }
+
+  .modal{
+    display: none;
+    position: fixed;
+    margin: auto;
+    background: white;
+    padding: 10px;
+    width: 50%;
+    top: 100px;
+    height: 25%;
+    z-index: 1;
+
+  }
+  #ReturnDate {
+    float: right;
+  }
+
+  #vacation-button {
+    float: right;
+  }
+
+
+  .table {
+    background-color: white;
+  }
+
+
+ @media only screen and (max-width: 980px) {
+  
+      .jumbotron {
+        background-color: rgb(221, 252, 253);
+        font-weight: bold;
+        color: black;
+        padding: 100px;
+        margin-top: 25px;
+        margin-left: 25px;
+        margin-right: 25px;
+        
+  
+      }
+      
+    #vacation-button {
+    float: right;
+    }
+      
+      
+      
+      
+      @media only screen and (max-width: 768px) {
+        .jumbotron {
+            background-color: rgb(221, 252, 253);
+            width: 100%;
+            font-weight: bold;
+            color: black;
+            padding: 25px;
+            padding-bottom: 60px;
+            margin-top: 10px;
+            margin-left: 10px;
+            
+          }
+          #vacation-button {
+            float: right;
+          }
+
+         #flightTable {
+            flex-flow: wrap;
+            overflow: scroll;
+            table-layout: fixed;
+          }
+
+      }
+      
+      
+      @media only screen and (max-width: 640px) {
+        .jumbotron {
+            background-color: rgb(221, 252, 253);
+            width: 100%;
+            font-weight: bold;
+            color: black;
+            margin-top: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            
+          }
+
+          #flightTable {
+            flex-flow: wrap;
+            overflow: scroll;
+            table-layout: fixed;
+        }
+        }}
+       
